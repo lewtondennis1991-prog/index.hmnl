@@ -1,0 +1,868 @@
+
+/* NEON TEMPLATE CSS - COMPLETE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.template-neon {
+    font-family: 'Rajdhani', sans-serif;
+    background: #0a0a0f;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* BACKGROUND EFFECTS */
+.neon-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, #00ff4133 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #ff009022 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, #00d9ff22 0%, transparent 50%);
+    z-index: -2;
+    animation: bg-shift 10s ease-in-out infinite;
+}
+
+@keyframes bg-shift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(0deg, transparent 24%, #ff009011 25%, #ff009011 26%, transparent 27%, transparent 74%, #ff009011 75%, #ff009011 76%, transparent 77%),
+        linear-gradient(90deg, transparent 24%, #ff009011 25%, #ff009011 26%, transparent 27%, transparent 74%, #ff009011 75%, #ff009011 76%, transparent 77%);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER */
+.neon-header {
+    padding: 20px 0;
+    border-bottom: 2px solid #ff009066;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.neon-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-neon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-neon img {
+    height: 50px;
+    filter: drop-shadow(0 0 10px #ff0090);
+    animation: logo-glow 2s ease-in-out infinite;
+}
+
+@keyframes logo-glow {
+    0%, 100% { filter: drop-shadow(0 0 10px #ff0090); }
+    50% { filter: drop-shadow(0 0 20px #ff0090) drop-shadow(0 0 30px #ff009077); }
+}
+
+.logo-neon .neon-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ff0090;
+    text-shadow: 
+        0 0 10px #ff0090,
+        0 0 20px #ff0090,
+        0 0 30px #ff0090,
+        0 0 40px #ff009077;
+    animation: neon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+.neon-header nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.neon-header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 5px 0;
+}
+
+.neon-header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff0090;
+    box-shadow: 0 0 10px #ff0090;
+    transition: width 0.3s ease;
+}
+
+.neon-header nav a:hover {
+    color: #ff0090;
+    text-shadow: 0 0 10px #ff0090;
+}
+
+.neon-header nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero-neon {
+    padding: 120px 0 100px;
+    text-align: center;
+    position: relative;
+}
+
+.glitch {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ff0090;
+    position: relative;
+    text-shadow: 
+        0 0 10px #ff0090,
+        0 0 20px #ff0090,
+        0 0 30px #ff0090,
+        0 0 40px #ff009077,
+        0 0 70px #ff009055;
+    animation: glitch 3s infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes glitch {
+    0%, 90%, 100% {
+        transform: translate(0);
+        text-shadow: 
+            0 0 10px #ff0090,
+            0 0 20px #ff0090,
+            0 0 30px #ff0090;
+    }
+    20% {
+        transform: translate(-3px, 3px);
+        text-shadow: 
+            -3px 3px 0 #00ff41,
+            3px -3px 0 #00d9ff,
+            0 0 20px #ff0090;
+    }
+    40% {
+        transform: translate(3px, -3px);
+        text-shadow: 
+            3px -3px 0 #00ff41,
+            -3px 3px 0 #00d9ff,
+            0 0 20px #ff0090;
+    }
+    60% {
+        transform: translate(-2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+}
+
+.neon-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    color: #ff0090;
+    margin: 20px 0;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px #ff009077;
+}
+
+.hero-desc {
+    font-size: 20px;
+    margin: 30px auto 50px;
+    opacity: 0.9;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.btn-neon-primary {
+    background: #ff0090;
+    color: #000000;
+    padding: 15px 45px;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 
+        0 0 20px #ff009099,
+        0 0 40px #ff009066,
+        inset 0 0 10px #ff009044;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.btn-neon-primary:hover {
+    box-shadow: 
+        0 0 30px #ff0090,
+        0 0 60px #ff009099,
+        inset 0 0 20px #ff009066;
+    transform: translateY(-3px);
+}
+
+.btn-neon-secondary {
+    background: transparent;
+    color: #ff0090;
+    padding: 15px 45px;
+    border: 2px solid #ff0090;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 10px #ff009044;
+}
+
+.btn-neon-secondary:hover {
+    background: #ff009022;
+    box-shadow: 
+        0 0 20px #ff009077,
+        inset 0 0 10px #ff009033;
+    transform: translateY(-3px);
+}
+
+.hero-social-neon {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-social-neon a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #ff009066;
+    color: #ff0090;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px #ff009077;
+    box-shadow: 0 0 15px #ff009033;
+    font-size: 14px;
+}
+
+.hero-social-neon a:hover {
+    background: #ff009015;
+    border-color: #ff0090;
+    box-shadow: 0 0 30px #ff009066;
+    transform: translateY(-3px);
+}
+
+.hero-social-neon svg {
+    width: 20px;
+    height: 20px;
+    fill: #ff0090;
+    filter: drop-shadow(0 0 5px #ff0090);
+}
+
+/* SECTION HEADINGS */
+.neon-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    color: #ff0090;
+    text-shadow: 
+        0 0 10px #ff0090,
+        0 0 20px #ff0090,
+        0 0 30px #ff009077;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* ABOUT SECTION */
+.about-neon {
+    padding: 100px 0;
+    position: relative;
+}
+
+.about-grid-neon {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-content-neon {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-content-neon .neon-lead {
+    font-size: 22px;
+    font-weight: 500;
+    color: #ff0090;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.about-content-neon p {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.neon-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.neon-stat-box {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid #ff009044;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #ff009022, transparent);
+    transition: left 0.5s ease;
+}
+
+.neon-stat-box:hover {
+    border-color: #ff0090;
+    box-shadow: 0 0 30px #ff009044;
+    transform: translateY(-5px);
+}
+
+.neon-stat-box:hover::before {
+    left: 100%;
+}
+
+.stat-glow {
+    font-size: 48px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px #ff0090);
+}
+
+.stat-val {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ff0090;
+    text-shadow: 0 0 20px #ff009077;
+    margin-bottom: 8px;
+}
+
+.stat-desc {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* FEATURES SECTION */
+.features-neon {
+    padding: 100px 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.features-neon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-neon {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff009044;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-neon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, #ff009011, transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.feature-neon:hover {
+    border-color: #ff0090;
+    box-shadow: 0 0 40px #ff009044;
+    transform: translateY(-8px);
+}
+
+.feature-neon:hover::before {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.feature-icon-neon {
+    font-size: 60px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 15px #ff0090);
+    position: relative;
+    z-index: 1;
+}
+
+.feature-neon h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    color: #ff0090;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-neon p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* TOKENOMICS SECTION */
+.tokenomics-neon {
+    padding: 100px 0;
+    position: relative;
+}
+
+.tokenomics-neon-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.token-info-neon {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-panel-neon {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff009044;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.info-panel-neon:hover {
+    border-color: #ff0090;
+    box-shadow: 0 0 30px #ff009033;
+    transform: scale(1.05);
+}
+
+.panel-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.panel-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff0090;
+    text-shadow: 0 0 20px #ff009077;
+}
+
+.distribution-neon {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #ff009044;
+    padding: 40px;
+}
+
+.distribution-neon h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    color: #ff0090;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.dist-bar-neon {
+    margin-bottom: 25px;
+}
+
+.dist-bar-neon:last-child {
+    margin-bottom: 0;
+}
+
+.bar-fill {
+    background: linear-gradient(90deg, #ff0090, #00ff41);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 0 20px #ff009066,
+        inset 0 0 10px #ff009033;
+    border: 1px solid #ff009077;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.bar-fill span {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+/* ROADMAP SECTION */
+.roadmap-neon {
+    padding: 100px 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.roadmap-neon-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.phase-neon {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #ff009044;
+    padding: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.phase-neon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #ff0090, #00ff41);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.phase-neon:hover {
+    border-color: #ff0090;
+    box-shadow: 0 0 40px #ff009044;
+    transform: translateY(-8px);
+}
+
+.phase-neon:hover::before {
+    opacity: 0.2;
+}
+
+.phase-marker {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: #ff009033;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 1;
+    text-shadow: 0 0 20px #ff009022;
+}
+
+.phase-content {
+    position: relative;
+    z-index: 1;
+}
+
+.phase-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    color: #ff0090;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.phase-date {
+    display: inline-block;
+    font-size: 12px;
+    color: #ff0090;
+    background: #ff009022;
+    padding: 5px 15px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid #ff009044;
+}
+
+.phase-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phase-content li {
+    padding: 10px 0;
+    padding-left: 20px;
+    border-bottom: 1px solid #ff009022;
+    position: relative;
+}
+
+.phase-content li:last-child {
+    border-bottom: none;
+}
+
+.phase-content li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ff0090;
+    font-size: 16px;
+}
+
+/* FOOTER */
+.footer-neon {
+    padding: 60px 0 30px;
+    border-top: 2px solid #ff009044;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.footer-neon-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-brand-neon {
+    flex: 1;
+}
+
+.neon-text-footer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: #ff0090;
+    text-shadow: 
+        0 0 10px #ff0090,
+        0 0 20px #ff009077;
+    margin-bottom: 10px;
+}
+
+.footer-brand-neon p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.footer-links-neon {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-links-neon a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.footer-links-neon a:hover {
+    color: #ff0090;
+    text-shadow: 0 0 10px #ff009077;
+}
+
+.copyright-neon {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #ff009022;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .about-grid-neon {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .tokenomics-neon-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .roadmap-neon-timeline {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 48px;
+    }
+    
+    .neon-heading {
+        font-size: 36px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-neon-primary,
+    .btn-neon-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .neon-header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .neon-header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .neon-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .token-info-neon {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-neon-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links-neon {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .glitch {
+        font-size: 36px;
+    }
+    
+    .neon-subtitle {
+        font-size: 18px;
+    }
+    
+    .neon-heading {
+        font-size: 28px;
+    }
+    
+    .features-neon-grid {
+        grid-template-columns: 1fr;
+    }
+}
